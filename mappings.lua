@@ -4,6 +4,7 @@ local M = {}
 M.disabled = {
   n = {
       ["<leader>tk"] = "",
+      ["<leader>bc"] = "",
   }
 }
 
@@ -55,6 +56,35 @@ M.nvterm = {
          "   new vertical term",
       },
    },
+}
+
+M.nvim_dap = {
+   n = {
+      ["<leader>db"] = {
+         function()
+            require("dap").toggle_breakpoint()
+         end,
+         "   toggle breakpoint",
+      },
+      ["<leader>do"] = {
+         function()
+            require("dap").repl.open()
+         end,
+         "   open repl",
+      },
+      ["<leader>dc"] = {
+         function()
+            require("dap").continue()
+         end,
+         "   continue",
+      },
+      ["<leader>dl"] = {
+         function()
+            require("dap").run_last()
+         end,
+         "   run last",
+      },
+   }
 }
 
 return M
