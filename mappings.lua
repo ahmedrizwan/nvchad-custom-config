@@ -5,14 +5,29 @@ M.disabled = {
   n = {
       ["<leader>tk"] = "",
       ["<leader>bc"] = "",
+      ["<leader>gt"] = "",
+      ["<leader>cm"] = "",
+      ["<leader>ca"] = "",
   }
+}
+
+M.lspconfig = {
+   n = {
+      ["<leader>la"] = {
+         function()
+            vim.lsp.buf.code_action()
+         end,
+         "   lsp code_action",
+      },
+   }
 }
 
 M.telescope = {
    n = {
-      -- theme switcher
       ["<leader>ft"] = { "<cmd> Telescope themes <CR>", "   nvchad themes" },
       ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
+      ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "  git status" },
+      ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "  git commits" },
    },
 }
 
@@ -38,22 +53,6 @@ M.nvterm = {
             require("nvterm.terminal").toggle "vertical"
          end,
          "   toggle vertical term",
-      },
-
-      -- new
-
-      ["<leader>h"] = {
-         function()
-            require("nvterm.terminal").new "horizontal"
-         end,
-         "   new horizontal term",
-      },
-
-      ["<leader>v"] = {
-         function()
-            require("nvterm.terminal").new "vertical"
-         end,
-         "   new vertical term",
       },
    },
 }
