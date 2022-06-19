@@ -2,6 +2,8 @@
 
 local M = {}
 
+M.mappings = require "custom.mappings"
+
 M.plugins = {
   options = {
     lspconfig = {
@@ -24,7 +26,7 @@ M.plugins = {
 -- example of changing theme:
 
 M.ui = {
-   theme = "nightfox",
+   theme = "gruvchad",
 }
 
 return M
