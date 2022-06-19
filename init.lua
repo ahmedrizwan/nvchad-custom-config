@@ -2,12 +2,12 @@
 
 -- load your globals, autocmds here or anything .__.
 
--- -- autocmds
+-- autocmds
 local autocmd = vim.api.nvim_create_autocmd
 
--- Don't auto commenting new lines
+-- format files on save
 autocmd("BufWritePre", {
-   pattern = "*",
+   pattern = "*.ts, *.tsx, *.html",
    command = "Prettier",
 })
 
