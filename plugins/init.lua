@@ -5,8 +5,12 @@ return {
        "javascript", "typescript", "css", "less", "scss", "graphql", "markdown", "vue", "html"
      }
    },
-   ["Pocco81/DAPInstall.nvim"] = {},
-   ["rcarriga/nvim-dap-ui"] = {},
    ["mfussenegger/nvim-dap"] = {},
+   ["Pocco81/DAPInstall.nvim"] = {
+     requires = {"mfussenegger/nvim-dap"}
+   },
+   ["rcarriga/nvim-dap-ui"] = {
+     requires = {"mfussenegger/nvim-dap"}
+   },
 }
 
