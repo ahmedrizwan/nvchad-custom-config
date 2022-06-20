@@ -61,6 +61,7 @@ M.nvim_dap = {
    n = {
       ["<leader>dr"] = {
          function()
+            print("Run debugger!")
             require("dap").run({
                 name = "Launch",
                 type = "node2",
