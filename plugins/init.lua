@@ -2,7 +2,7 @@ return {
    ["prettier/vim-prettier"] = {
      run = "yarn install",
      ft = {
-       'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'
+       "javascript", "typescript", "css", "less", "scss", "graphql", "markdown", "vue", "html"
      }
    },
    ["Pocco81/DAPInstall.nvim"] = {},

@@ -59,6 +59,20 @@ M.nvterm = {
 
 M.nvim_dap = {
    n = {
+      ["<leader>dr"] = {
+         function()
+            require("dap").run({
+                name = "Launch",
+                type = "node2",
+                request = "launch",
+                program = "${file}",
+                cwd = vim.fn.getcwd(),
+                sourceMaps = true,
+                protocol = "inspector",
+            })
+         end,
+         "   run debugger",
+      },
       ["<leader>db"] = {
          function()
             require("dap").toggle_breakpoint()
