@@ -14,11 +14,17 @@ autocmd("BufWritePre", {
 -- dap adapters (for debugging)
 local dap = require "dap"
 
-dap.adapters.node2 = {
-  type = "executable",
-  command = "node",
-  args = {os.getenv("HOME") .. "/vscode-node-debug2/out/src/nodeDebug.js"},
-}
+dap.adapters.node2 = function(cb, config)
+    if config.preLaunchTask then vim.fn.system(config.preLaunchTask) end
+    local adapter = {
+        type = 'executable',
+        command = 'node',
+        args = {
+            os.getenv('HOME') .. '/vscode-node-debug2/out/src/nodeDebug.js'
+        },
+    }
+    cb(adapter)
+end
 
 dap.configurations.javascript = {
   {
@@ -46,7 +52,7 @@ dap.configurations.typescript = { -- works for node-bifrost project
     type = "node2",
     request = "launch",
     program = "${workspaceFolder}/packages/bifrost-server/dist/index.js",
-    preLaunchTask = "yarn dev",
+    preLaunchTask = "yarn build",
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
     protocol = "inspector",
