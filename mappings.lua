@@ -8,7 +8,10 @@ M.disabled = {
       ["<leader>gt"] = "",
       ["<leader>cm"] = "",
       ["<leader>ca"] = "",
-  }
+  },
+  i = {
+      ["<C-l>"] = "",
+  },
 }
 
 M.lspconfig = {
@@ -116,6 +119,12 @@ M.buffers = {
       ["<leader>bp"] = { "<cmd> bn <CR>", "  previous buffer" },
    }
 }
+
+-- M.copilot = {
+--     i = {
+--         ["<C-l>"] = { "<cmd> copilot#Accept(\"\") <CR>", "  copilot accept" },
+--     }
+-- }
 
 return M
 
