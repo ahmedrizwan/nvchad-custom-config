@@ -26,7 +26,7 @@ M.plugins = {
 -- example of changing theme:
 
 M.ui = {
-   theme = "gruvchad",
+   theme = "rxyhn",
 }
 
 return M
